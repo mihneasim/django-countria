@@ -1,4 +1,5 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages
+from distutils.core import setup
 
 setup(
     name='countria',
@@ -14,5 +15,11 @@ setup(
     license='BSD',
     platforms=['any'],
     install_requires=['lingua'],#pip
-    packages=find_packages(),
+    packages=['countria'],
+    package_dir={
+        'countria': 'countria'
+    },
+    package_data={
+        'countria': ['fixtures/*.json', 'locale/de/LC_MESSAGES/*.po']
+    }
 )
