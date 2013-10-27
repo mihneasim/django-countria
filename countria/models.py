@@ -1,7 +1,12 @@
+import os
+from importlib import import_module
+
 from django.db import models
 from lingua import translation
 from decimal import Decimal
-import settings
+
+settings = import_module(os.environ['DJANGO_SETTINGS_MODULE'])
+
 
 class Currency(models.Model):
     class Translation(translation.Translation):
